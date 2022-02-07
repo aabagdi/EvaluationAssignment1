@@ -28,7 +28,9 @@ vec_t sum(vec_t* arr, int size) {
 double time_exe(vec_t* xs, vec_t* ys, vec_t* zs, vec_t* vx, vec_t* vy, vec_t* vz, int size) {
     struct timespec start, stop;
     clock_gettime(CLOCK_MONOTONIC, &start);
-    update_coords(xs, ys, zs, vx, vy, vz, size);
+    for (int i = 0; i <= size; i++) {
+        update_coords(xs, ys, zs, vx, vy, vz, size);
+    }
     clock_gettime(CLOCK_MONOTONIC, &stop);
     double time_taken = (stop.tv_sec - start.tv_sec) + (double)(stop.tv_nsec - start.tv_nsec)/BILLION;
     return time_taken;
