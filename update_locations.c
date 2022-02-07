@@ -2,15 +2,15 @@
 
 vec_t* generate_random_list(int size, int bound) {
     srand(size);
-    vec_t* randArray = malloc((sizeof(vec_t))*size);
+    vec_t* randArray = (vec_t*)malloc((sizeof(vec_t))*size);
     for (int i = 0; i <= size; i++) {
-        randArray[i] = (rand() % (2*bound + 1)) - bound;
+        randArray[i] = (rand() % (2*bound + 1) - bound);
     }
     return randArray;
 }
 
 void update_coords(vec_t* xs, vec_t* ys, vec_t* zs, vec_t* vx, vec_t* vy, vec_t* vz, int size) {
-    for (int8_t i = 0; i <= size; i++) {
+    for (int i = 0; i <= size; i++) {
         xs[i] = xs[i] + vx[i];
         ys[i] = ys[i] + vy[i];
         zs[i] = zs[i] + vz[i];
