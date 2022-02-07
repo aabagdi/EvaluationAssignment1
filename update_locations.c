@@ -3,7 +3,7 @@
 vec_t* generate_random_list(int size, int bound) {
     srand(size);
     vec_t* randArray = malloc((sizeof(vec_t))*size);
-    for (int8_t i = 0; i <= size; i++) {
+    for (int i = 0; i <= size; i++) {
         randArray[i] = (rand() % (2*bound + 1)) - bound;
     }
     return randArray;
