@@ -50,5 +50,11 @@ int main(int argc, char* argv[]) {
     double exec_time = MILLION * time_exe(xs, ys, zs, vx, vy, vz, size)/(size * iters);
     vec_t chksum = sum(xs, size) + sum(ys, size) + sum(zs, size);
     printf("Average time per coordinate= %0.22f us, Chksum = %i \n", exec_time, chksum);
+    free(xs);
+    free(ys);
+    free(zs);
+    free(vx);
+    free(vy);
+    free(vz);
     return 0;
 }
